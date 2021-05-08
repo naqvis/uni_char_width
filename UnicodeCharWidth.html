@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="uniwidth">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="uniwidth">
+  <title>UnicodeCharWidth - uniwidth main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          uniwidth
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="uniwidth/UnicodeCharWidth" data-name="unicodecharwidth">
+      <a href="UnicodeCharWidth.html">UnicodeCharWidth</a>
+      
+        <ul>
+  
+  <li class=" " data-id="uniwidth/UnicodeCharWidth/Condition" data-name="unicodecharwidth::condition">
+      <a href="UnicodeCharWidth/Condition.html">Condition</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> UnicodeCharWidth
+
+</h1>
+
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Provides methods to get fixed width of the unicode character or string.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/charwidth/charwidth.cr#L6" target="_blank">
+        charwidth/charwidth.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/charwidth/eastasian.cr#L1" target="_blank">
+        charwidth/eastasian.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/charwidth/table.cr#L7" target="_blank">
+        charwidth/table.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L2" target="_blank">
+        uniwidth.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="NEW_LINE">
+        <strong>NEW_LINE</strong> = <code><span class="s">&quot;\n&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.1&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#ambiguous?(codepoint:Int32)-class-method" class="signature"><strong>.ambiguous?</strong>(codepoint : Int32)</a>
+        
+          <div class="summary"><p>returns whether is ambiguous width or not EastAsian Ambiguous characters that can be sometimes wide and sometimes narrow and require additional information not contained in the character code to further resolve their width.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ambiguous?(char:Char)-class-method" class="signature"><strong>.ambiguous?</strong>(char : Char)</a>
+        
+          <div class="summary"><p>returns whether char is ambiguous width or not EastAsian Ambiguous characters that can be sometimes wide and sometimes narrow and require additional information not contained in the character code to further resolve their width.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default_condition-class-method" class="signature"><strong>.default_condition</strong></a>
+        
+          <div class="summary"><p>DefaultCondition is a condition in current locale</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#east_asian?-class-method" class="signature"><strong>.east_asian?</strong></a>
+        
+          <div class="summary"><p>return true if the current locale is CJK</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#neutral?(codepoint:Int32)-class-method" class="signature"><strong>.neutral?</strong>(codepoint : Int32)</a>
+        
+          <div class="summary"><p>returns whether is neutral width or not Neutral characters do not occur in legacy East Asian character sets.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#neutral?(char:Char)-class-method" class="signature"><strong>.neutral?</strong>(char : Char)</a>
+        
+          <div class="summary"><p>returns whether char is neutral width or not Neutral characters do not occur in legacy East Asian character sets.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pad_left(str:String,w:Int32)-class-method" class="signature"><strong>.pad_left</strong>(str : String, w : Int32)</a>
+        
+          <div class="summary"><p>returns a string filled in left by spaces in <code>w</code> cells</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pad_right(str:String,w:Int32)-class-method" class="signature"><strong>.pad_right</strong>(str : String, w : Int32)</a>
+        
+          <div class="summary"><p>returns a string filled in right by spaces in <code>w</code> cells</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#truncate(str:String,w:Int32,tail:String)-class-method" class="signature"><strong>.truncate</strong>(str : String, w : Int32, tail : String)</a>
+        
+          <div class="summary"><p>return string truncated with <code>w</code> cells</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width(codepoint:Int32)-class-method" class="signature"><strong>.width</strong>(codepoint : Int32)</a>
+        
+          <div class="summary"><p>returns the number of cells in codepoint see http://www.unicode.org/reports/tr11/</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width(char:Char)-class-method" class="signature"><strong>.width</strong>(char : Char)</a>
+        
+          <div class="summary"><p>return the number of cells in `char'</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width(str:String)-class-method" class="signature"><strong>.width</strong>(str : String)</a>
+        
+          <div class="summary"><p>returns string width</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#wrap(str:String,w:Int32)-class-method" class="signature"><strong>.wrap</strong>(str : String, w : Int32)</a>
+        
+          <div class="summary"><p>returns a string wrapped with <code>w</code> cells</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="ambiguous?(codepoint:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>ambiguous?</strong>(codepoint : Int32)
+
+        <a class="method-permalink" href="#ambiguous?(codepoint:Int32)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns whether is ambiguous width or not
+EastAsian Ambiguous characters that can be sometimes wide and sometimes
+narrow and require additional information not contained in the character
+code to further resolve their width.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ambiguous?(char:Char)-class-method">
+      <div class="signature">
+        
+        def self.<strong>ambiguous?</strong>(char : Char)
+
+        <a class="method-permalink" href="#ambiguous?(char:Char)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns whether char is ambiguous width or not
+EastAsian Ambiguous characters that can be sometimes wide and sometimes
+narrow and require additional information not contained in the character
+code to further resolve their width.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default_condition-class-method">
+      <div class="signature">
+        
+        def self.<strong>default_condition</strong>
+
+        <a class="method-permalink" href="#default_condition-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>DefaultCondition is a condition in current locale</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/charwidth/charwidth.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="east_asian?-class-method">
+      <div class="signature">
+        
+        def self.<strong>east_asian?</strong>
+
+        <a class="method-permalink" href="#east_asian?-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>return true if the current locale is CJK</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/charwidth/eastasian.cr#L2" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="neutral?(codepoint:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>neutral?</strong>(codepoint : Int32)
+
+        <a class="method-permalink" href="#neutral?(codepoint:Int32)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns whether is neutral width or not
+Neutral characters do not occur in legacy East Asian character sets.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="neutral?(char:Char)-class-method">
+      <div class="signature">
+        
+        def self.<strong>neutral?</strong>(char : Char)
+
+        <a class="method-permalink" href="#neutral?(char:Char)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns whether char is neutral width or not
+Neutral characters do not occur in legacy East Asian character sets.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pad_left(str:String,w:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>pad_left</strong>(str : String, w : Int32)
+
+        <a class="method-permalink" href="#pad_left(str:String,w:Int32)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns a string filled in left by spaces in <code>w</code> cells</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L32" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pad_right(str:String,w:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>pad_right</strong>(str : String, w : Int32)
+
+        <a class="method-permalink" href="#pad_right(str:String,w:Int32)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns a string filled in right by spaces in <code>w</code> cells</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="truncate(str:String,w:Int32,tail:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>truncate</strong>(str : String, w : Int32, tail : String)
+
+        <a class="method-permalink" href="#truncate(str:String,w:Int32,tail:String)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>return string truncated with <code>w</code> cells</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width(codepoint:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>width</strong>(codepoint : Int32)
+
+        <a class="method-permalink" href="#width(codepoint:Int32)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns the number of cells in codepoint
+see http://www.unicode.org/reports/tr11/</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width(char:Char)-class-method">
+      <div class="signature">
+        
+        def self.<strong>width</strong>(char : Char)
+
+        <a class="method-permalink" href="#width(char:Char)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>return the number of cells in `char'</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width(str:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>width</strong>(str : String)
+
+        <a class="method-permalink" href="#width(str:String)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns string width</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="wrap(str:String,w:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>wrap</strong>(str : String, w : Int32)
+
+        <a class="method-permalink" href="#wrap(str:String,w:Int32)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns a string wrapped with <code>w</code> cells</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/uni_char_width/blob/bbe0b6caaf93ec9a0550113be94632acd0b3d018/src/uniwidth.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
