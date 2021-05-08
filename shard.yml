@@ -1,5 +1,5 @@
 name: uniwidth
-version: 0.1.0
+version: 0.1.1
 
 authors:
   - Ali Naqvi <syed.alinaqvi@gmail.com>
@@ -13,6 +13,11 @@ scripts:
 dependencies:
   textseg:
     github: naqvis/uni_text_seg
+
+development_dependencies:
+  athena-spec:
+    github: athena-framework/spec
+    version: ~> 0.2.0
 
 crystal: ">= 0.36.0, < 2.0.0"
 

@@ -1,6 +1,6 @@
 # Provides methods to get fixed width of the unicode character or string.
 module UnicodeCharWidth
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   # returns the number of cells in codepoint
   # see http://www.unicode.org/reports/tr11/
