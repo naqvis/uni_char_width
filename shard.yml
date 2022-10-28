@@ -1,5 +1,5 @@
 name: uniwidth
-version: 0.1.2
+version: 0.1.3
 
 authors:
   - Ali Naqvi <syed.alinaqvi@gmail.com>
@@ -8,7 +8,7 @@ description: |
   Provides methods to get fixed with of unicode character or string
 
 scripts:
-  postinstall: crystal run generate_charwidth_data.cr
+  postinstall: crystal run scripts/generate_charwidth_data.cr
 
 dependencies:
   textseg:
